@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="greet.css">
+    <!-- <link rel="stylesheet" href="simple-grid.css"> -->
+    <link rel="stylesheet" href="skeleton.css">
+    <link rel="stylesheet" href="normalize.css">
+    <title>Greetings</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="six-columns box greetings">
+                <img src="" class="background">
+                <h1>Greeting</h1>
+                <form id="greetForm">
+                <div class="name">
+                    <label class="label-body nameInput">First Name:</label> <input type="text"
+                        placeholder="Your first name" name="nameInput" required></span>
+                    <label class="label-body surnameInput">Last Name:</label> <input type="text"
+                        placeholder="Your last name" name="surnameInput" required></span>
+                </div>
+                <br>
+                <div class="language-cover">
+                    <label class="">
+                        <input type="radio" name="language" class="languageRadioBtn" value="English"><label
+                            class="label-body" >English</label>
+                    </label>
+                    <label for="">
+                        <input type="radio" name="language" class="languageRadioBtn" value="Afrikaans"><label
+                            class="label-body">Afrikaans</label>
+                    </label>
+                    <label for="">
+                        <input type="radio" name="language" class="languageRadioBtn" value="isiXhosa"><label class="label-body">isiXhosa
+                            </label>
+                        </label>
+                </div>
+                <br>
+                <div class="greet-me">
+                    <button class="button-primary greetBtn">Greet me</button>
+                </div>
+                <br>
+                <div>
+                    <textarea name="output" id="" cols="50" rows="5" class="output"></textarea>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="theMessage"></div>
+
+</body>
+<script src="greet.js"></script>
+
+</html>

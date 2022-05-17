@@ -1,0 +1,90 @@
+/* .name{
+    padding-right: 200px;
+}
+.language-cover{
+    padding-right: 200px;
+}
+
+input{
+    flex: content;
+    flex-direction: column;
+} */
+.box {
+    padding: 1.75em;
+    border-radius : 0.5em;
+    /* border : 1px solid #ddd; */
+    height: 100%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    /* object-fit: cover; */
+  } 
+.greetings{
+    /* background-color: olive; */
+    width: fit-content;
+     
+    /* height: 430px; */
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto; 
+    
+   
+}  
+img.background{
+    background-image: linear-gradient(rgb(9, 255, 0, 0), rgb(255, 0, 0, 0.5)), url("backgroundpic.jpg");
+    position: absolute;
+    z-index: -2;
+    filter: blur(2px);
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19); 
+    /*object-fit:cover;  */
+    height: 100%; 
+     width: 100%; 
+    background-repeat:no-repeat; 
+    left: 0px;
+    top: 0px; 
+    /* padding-right: 100px;  */
+    margin-left: auto;
+    margin-right: auto; 
+    background-position: cover;
+
+}
+h1{
+    text-align: center;
+    background-color:navy;
+
+}
+label, h1{
+    color:white;
+}
+.greet-me{
+    padding-left: 340px;
+}
+input{
+    color: black;
+}
+button{
+    background-color: blue;
+}
+.theMessage{
+    /* color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid gray;
+    background-color: #ebebeb;
+    color: #2f2f2f;
+    border-radius: 15px;
+}
+/* .students {
+   
+  } */
+  
+  .theMessage div {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .theMessage div * {
+    margin: 5px;
+  }
