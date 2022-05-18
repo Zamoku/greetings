@@ -14,10 +14,10 @@ function Greetings() {
             language
         })
     }
-    function getGreet() {
-        var greetingString = getLanguageGreet() +  ", " + theName + " " + theSurname   
-        return greetingString
-    }
+    // function getGreet() {
+    //     var greetingString = getLanguageGreet() +  ", " + theName + " " + theSurname   
+    //     return greetingString
+    // }
     function countGreet(){
         greetCounter++
     } 
@@ -27,33 +27,38 @@ function Greetings() {
      function displayMessage(){
         return " "
      }
-     function setLanguageGreet(language){
+     function setLanguageGreet(language, name, surname){
         theLanguage = language
+        theName = name
+        theSurname = surname
      }
-     function getLanguageGreet(language, name){
+     function getLanguageGreet(){
         if(theLanguage === "isiXhosa"){
-            return "Molo, " + name 
+            return "Molo, " + theName + " " + theSurname
         }
         if(theLanguage === "English"){
-            return "Hello, " + name
+            return "Hello, " + theName + " " + theSurname
         }
         else if(theLanguage === "Afrikaans"){
-            return "Hallo, " + name
+            return "Hallo, " + theName + " " + theSurname
         }
     }
    
-    function codex() {
+    function howManyGreetings() {
         return array.length;
     }
+    function test(){
+        return getLanguageGreet()
+    }
     return {
-        getGreet,
         setGreet,
         countGreet,
         greetedCounter,
         displayMessage,
         getLanguageGreet,
         setLanguageGreet,
-        codex
+        howManyGreetings,
+        test
     }
 
 }
