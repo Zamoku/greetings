@@ -108,35 +108,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // //Add refrences to select elements
 // const greetBtn = document.querySelector(".greetBtn");
 // const container = document.querySelector(".container")
@@ -251,6 +222,7 @@ const addGreet = (name, surname, language) => {
 
     return{name, surname, language};
 
+    
 }
 
 const createGreetElement = ({name, surname, language}) => {
@@ -259,12 +231,12 @@ const createGreetElement = ({name, surname, language}) => {
    const greetSurname = document.createElement('p')
    const greetLanguage = document.createElement('p')
 
-   console.log(greetLanguage)
+
 
    var checkedLang = ""
 
    for (let i = 0; i < languageRadioBtn.length; i++) {
-            console.log(languageRadioBtn.value)
+            //console.log(languageRadioBtn[length])
 
         if(languageRadioBtn.value === "isiXhosa"){
             checkedLang = "Molo"
@@ -280,6 +252,7 @@ const createGreetElement = ({name, surname, language}) => {
 
 //    Fill the content
    greetName.innerHTML = checkedLang + ", " + name + " "+ surname;
+   
 
    const myTimeout = setTimeout(myGreet, 5000);
 
@@ -300,6 +273,10 @@ const createGreetElement = ({name, surname, language}) => {
 
     greetData.forEach(createGreetElement)
 
+    
+
+
+
 //greetBtn.addEventListener("click",function() = (e) => {
   // container.onsubmit = (e) => {
     greetForm.onsubmit = (e) => {
@@ -316,7 +293,16 @@ const createGreetElement = ({name, surname, language}) => {
     surnameInput.value = ""
     languageRadioBtn.value = ""
 
+    localStorage.clear();
+
 }
+
+// document.getElementById("clear").onclick = clear_me;
+
+// function clear_me() {
+//     localStorage.clear();
+//     checkStorage();
+// }
 
 
 
