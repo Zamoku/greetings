@@ -1,64 +1,105 @@
 function Greetings() {
-    var greetCounter = 0
-    var array = []
-    var theName = ""
-    var theSurname = ""
-    var theLanguage = ""
+
+  
+    var array = JSON.parse(localStorage.getItem("array")) || [];
+    var greetMessage = ""
+    var errorMessage = ""
+    var warningMessage = ""
+    var newArray = []
 
 
-
-    function setGreet(name, surname, language){
-        array.push( {
-            name,
-            surname,
-            language
-        })
-    }
-    // function getGreet() {
-    //     var greetingString = getLanguageGreet() +  ", " + theName + " " + theSurname   
-    //     return greetingString
-    // }
-    function countGreet(){
-        greetCounter++
-    } 
-    function greetedCounter(){
-        return greetCounter++
-    }
-     function displayMessage(){
-        return " "
-     }
-     function setLanguageGreet(language, name, surname){
-        theLanguage = language
-        theName = name
-        theSurname = surname
-     }
-     function getLanguageGreet(){
-        if(theLanguage === "isiXhosa"){
-            return "Molo, " + theName + " " + theSurname
+    function setGreet(name, language){
+        
+        // array.push({
+        //     name,
+        //     language
+        // })
+     
+        if(!array.includes(name) && name !== ""){
+            array.push(
+                name
+            )
+        } else if(array.includes(name)) {
+            errorMessage = "You have already added the name" 
+            warningMessage = ""
+            greetMessage = " "
         }
-        if(theLanguage === "English"){
-            return "Hello, " + theName + " " + theSurname
+       
+        localStorage.setItem("array", JSON.stringify(array))
+        
+     //}
+    // function setGreetMessage(name, surname, language){
+       
+        if(language === "isiXhosa"){
+            greetMessage = "Molo, " + name 
         }
-        else if(theLanguage === "Afrikaans"){
-            return "Hallo, " + theName + " " + theSurname
+        if(language === "English"){
+            greetMessage = "Hello, " + name 
         }
+         if(language === "Afrikaans"){
+            greetMessage = "Hallo, " + name 
+        }
+         if(language === null){
+            errorMessage = "Please select your language of choice"
+        }
+        else if(name === ""){
+            warningMessage = "Please enter name"
+             greetMessage = " "
+             errorMessage = " "
+             
+        }
+        
+       
+       
     }
-   
+    
+    function getGreet() {
+        return greetMessage
+    }
+    function getDuplicate(){
+        //write/set duplicate function so that you use the duplicate funtion for count also.
+        return errorMessage
+    }
+    function getWarning(){
+        return warningMessage
+    }
+     function countGreet(){
+         //an if statement is needed to check for duplicates so that no list is added or pushed.
+        return array.length
+     } 
+     
     function howManyGreetings() {
-        return array.length;
+        return newArray;
+        
     }
-    function test(){
-        return getLanguageGreet()
-    }
+    // function test(){
+    //     return getLanguageGreet()
+    // }
     return {
         setGreet,
         countGreet,
-        greetedCounter,
-        displayMessage,
-        getLanguageGreet,
-        setLanguageGreet,
         howManyGreetings,
-        test
+        getGreet,
+        getDuplicate,
+        getWarning
+       // setDuplicate
     }
 
 }
+//var greeting = Greetings()
+//greeting.countGreet()
+//greeting.countGreet()
+//console.log(greeting.howManyGreetings())
+// greeting.setGreet("Nomzamo","Muleka","isiXhosa")
+// greeting.setGreet("Nomfundo","Mjoli","English")
+// greeting.setGreet("Nomfundo","Mjoli","English")
+// greeting.setDuplicate("Nomfundo")
+// greeting.setDuplicate("Nomzamo")
+//greeting.setDuplicate("Nomzamo")
+//greeting.setGreet("Nomzamo","Muleka","isiXhosa")
+// console.log(greeting.howManyGreetings())
+// console.log(greeting.getDuplicate())
+// console.log(greeting.countGreet())
+
+
+
