@@ -18,6 +18,8 @@ greetBtn.addEventListener("click",function(event){
 
     const languageRadioBtn = document.querySelector("input[name='language']:checked");
 
+    //greetInstance.testRegex()
+
     greetInstance.setGreet(nameInput.value,languageRadioBtn.value)
 
     
@@ -41,7 +43,6 @@ greetBtn.addEventListener("click",function(event){
     function myWarningGreeting() {
     warningMessage.innerHTML = " "
   }
-  
  
 })
 counterGreet.innerHTML = greetInstance.countGreet();
