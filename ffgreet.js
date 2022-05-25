@@ -3,9 +3,10 @@ function Greetings() {
     var array = JSON.parse(localStorage.getItem("array")) || [];
     var errorMessage = ""
     var warningMessage = ""
+    var greetMessage = ""
     var newArray = []
     const regex = /^[a-z]+$/gi
-    const arrayLength = array.length
+    //const arrayLength = array.length
 
   
     function setGreet(name, language){
@@ -18,12 +19,15 @@ function Greetings() {
         // if(!language.checked){
         //     warningMessage = "Please select your language of choice"
         // }
-        if(!array.includes(name) && name !== ""){
+        if(!array.includes(name) && name !== "" && language.checked){
             array.push(
                 name
             )  
-        
-        }  else if(!language.checked){
+        } else if(name === ""){
+            warningMessage = "Please enter name"
+            greetMessage = ""
+        }
+        else if(language.checked){
             warningMessage = "Please select your language of choice"
         }
         
@@ -31,7 +35,7 @@ function Greetings() {
             errorMessage = "You have already added the name" 
             
         }
-        else if(!name.match(regex)){
+        else if(!name.match(regex && name !== "")){
             errorMessage = "Please enter the correct name"
         }
        
@@ -43,10 +47,10 @@ function Greetings() {
         if(language === "isiXhosa"){
             greetMessage = "Molo, " + name 
         }
-        if(language === "English"){
+         if(language === "English"){
             greetMessage = "Hello, " + name 
         }
-         if(language === "Afrikaans"){
+         else if(language === "Afrikaans"){
             greetMessage = "Hallo, " + name 
         }
 
@@ -58,32 +62,23 @@ function Greetings() {
         return greetMessage
     }
     function getDuplicate(){
-        //write/set duplicate function so that you use the duplicate funtion for count also.
         return errorMessage
     }
     function getWarning(){
         return warningMessage
     }
      function countGreet(){
-         //an if statement is needed to check for duplicates so that no list is added or pushed.
         return array.length
      } 
      
-    function howManyGreetings() {
-        return newArray;
-        
-    }
-    // function test(){
-    //     return getLanguageGreet()
-    // }
+   
     return {
         setGreet,
         countGreet,
-        howManyGreetings,
         getGreet,
         getDuplicate,
         getWarning
-        //setDuplicate
+      
     }
 
 
