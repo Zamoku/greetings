@@ -31,12 +31,13 @@ function Greetings() {
             warningMessage = "Please select your language of choice"
         }
         
-          else if(array.includes(name)) {
+          else if(array.includes(name) && name !== "") {
             errorMessage = "You have already added the name" 
             
         }
         else if(!name.match(regex && name !== "")){
             errorMessage = "Please enter the correct name"
+
         }
        
        
