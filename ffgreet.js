@@ -11,14 +11,7 @@ function Greetings() {
   
     function setGreet(name, language){
         
-        // array.push({
-        //     name,
-        //     language
-        // })
        
-        // if(!language.checked){
-        //     warningMessage = "Please select your language of choice"
-        // }
         if(!array.includes(name) && name !== "" && language.checked){
             array.push(
                 name
@@ -39,11 +32,7 @@ function Greetings() {
             errorMessage = "Please enter the correct name"
 
         }
-       
-       
-        
-     //}
-    // function setGreetMessage(name, surname, language){
+
        
         if(language === "isiXhosa"){
             greetMessage = "Molo, " + name 
@@ -86,20 +75,7 @@ function Greetings() {
 
     
 }
-//var greeting = Greetings()
-//greeting.countGreet()
-//greeting.countGreet()
-//console.log(greeting.howManyGreetings())
-// greeting.setGreet("Nomzamo","Muleka","isiXhosa")
-// greeting.setGreet("Nomfundo","Mjoli","English")
-// greeting.setGreet("Nomfundo","Mjoli","English")
-// greeting.setDuplicate("Nomfundo")
-// greeting.setDuplicate("Nomzamo")
-//greeting.setDuplicate("Nomzamo")
-//greeting.setGreet("Nomzamo","Muleka","isiXhosa")
-// console.log(greeting.howManyGreetings())
-// console.log(greeting.getDuplicate())
-// console.log(greeting.countGreet())
+
 
 
 
