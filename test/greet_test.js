@@ -74,7 +74,7 @@ describe("Testing greet exercise", function(){
      })
      it("should return an error message if the langauge is not selected",function(){
         var greetings =  Greetings();
-        assert.deepEqual("Please select language", greetings.checkLanguagechecked(" "))
+        assert.deepEqual("Please select language", greetings.checkLanguagechecked(""))
         
 
         // var greetings2 =  Greetings();
