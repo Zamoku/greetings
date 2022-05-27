@@ -98,6 +98,9 @@ button{
   .theMessage div * {
     margin: 5px;
   }
+  #clear{
+      margin-left: 50px;
+  }
   form{
     padding-left: 20px;
     background-color:navy
@@ -116,14 +119,14 @@ button{
   .errorMessage{
       color: red;
       text-align: center;
-      font-size: medium;
+      font-size: large;
   }
   .warningMessage{
       color: orange;
       text-align: center;
-      font-size:medium;
+      font-size:large;
   }
-  @media only screen and (max-width: 280px) and (min-width: 80px) {  /* 540px */
+  @media only screen and (max-width: 280px) and (min-width: 580px) {  /* 540px */
     body{
         background-image: url("backgroundpic.jpg");
     } 

@@ -1,66 +1,100 @@
 describe("Testing greet exercise", function(){
-//     it("should return the greeting message",function(){
-//         var greetings =  Greetings();
-//         greetings.setGreet("Nomzamo", "isiXhosa")
-//        // console.log(greetings.getGreet());
-//        // console.log(greetings.getGreet());
-//         assert.equal("Molo, Nomzamo",greetings.getGreet())
+    it("should return the name entered",function(){
+        var greetings =  Greetings();
+        
+        greetings.setGreet("Nomzamo")
+        assert.equal("Nomzamo",greetings.getGreet())
 
 
-//         var greetings2 =  Greetings();
-//         greetings2.setGreet("Zandile", "Afrikaans")
-//         assert.equal("Hallo, Zandile",greetings2.getGreet())
-//     })
-//     it("should return the counter of greeting",function(){
-//         var greetings =  Greetings();
-//        // greetings.setGreet("Nomzamo", "English")
-//        // greetings.countGreet();
-//         assert.equal(1,greetings.countGreet())
+        var greetings2 =  Greetings();
+        greetings2.setGreet("Zandile")
+        assert.equal("Zandile",greetings2.getGreet())
+    })
+    it("should return the greeting message",function(){
+        var greetings =  Greetings();
+        
+        greetings.setGreetMessage("Nomzamo","English")
+        assert.equal("Hello, Nomzamo",greetings.getGreetMessage())
 
 
-
-//         var greetings2 =  Greetings();
-//         //greetings2.setGreet("Nomzamo", "Muleka", "isiXhosa")
-//         //greetings2.setGreet("Nomzamo", "Muleka", "isiXhosa")
-//         greetings2.setGreet("Nomzamo", "Muleka", "isiXhosa")
-//         assert.equal(3,greetings2.countGreet())
-
-//     })
-//     it("should check if the name added is real word and have no other characters",function(){
-//         var greetings =  Greetings();
-//         greetings.testRegex("Nomzamo");
-//         assert.equal("Please check name and", greetings.testRegex())
-
-       
+        var greetings2 =  Greetings();
+        greetings2.setGreetMessage("Zandile", "Afrikaans")
+        assert.equal("Hallo, Zandile",greetings2.getGreetMessage())
+    })
+    it("should return the counter of greeting",function(){
+        var greetings =  Greetings();
+        greetings.setGreet("Nomzamo")
+        greetings.setGreet("Nomzamo2")
+       // greetings.countGreet();
+        assert.equal(2,greetings.getCounter())
 
 
 
-//    })
-    //     it("should check for duplicates",function(){
-    //         var greetings =  Greetings();
-    //         greetings.setDuplicate("Nomzamo")
-    //         greetings.setDuplicate("Nomzamo")
-    //         assert.equal("You have entered a duplicate", greetings.getDuplicate())
-            
+        var greetings2 =  Greetings();
+        greetings2.setGreet("Nomzamo")
+        greetings2.setGreet("Zamo")
+        greetings2.setGreet("Vuyokazi")
+        assert.equal(3,greetings2.getCounter())
+
+    })
+    it("should return an error message if the name added with special characters",function(){
+        // var greetings =  Greetings();
+        // greetings.setGreet("Nomzamo");
+        // assert.equal("Please enter the correct name", greetings.checkName())
+
+        var greetings =  Greetings();
+     //   greetings.checkName("Sinazo");
+        assert.equal("Please enter the correct name", greetings.checkName("Luvo,"))
 
 
-    //         var greetings2 =  Greetings();
-    //         greetings2.setDuplicate("Nomzamo")
-    //         greetings2.setDuplicate("Nomfundo")
-    //         assert.equal("No duplicates", greetings2.getDuplicate())
-    //  })
-    it("should check for unwanted characters in Name",function(){
+   })
+   it("should return an error message if the name added with numbers",function(){
+    // var greetings =  Greetings();
+    // greetings.setGreet("Nomzamo");
+    // assert.equal("Please enter the correct name", greetings.checkName())
+
+    var greetings =  Greetings();
+    //   greetings.checkName("Sinazo");
+    assert.deepEqual("Please enter the correct name", greetings.checkName("123"))
+
+
+    })
+     it("should check for duplicates",function(){
             var greetings =  Greetings();
-            greetings.regexCheck("Nomzamo3")
-            assert.equal("wrong characters", greetings.getregexCheck())
+            greetings.setGreet("Nomzamo")
+            greetings.setGreet("Nomfundo")
+            assert.deepEqual("You have already added the name", greetings.checkForDuplicate("Nomzamo"))
             
 
 
             // var greetings2 =  Greetings();
-            // greetings2.setDuplicate("Nomzamo")
-            // greetings2.setDuplicate("Nomfundo")
-            // assert.equal("No duplicates", greetings2.getDuplicate())
+            // greetings2.setGreet("Nomzamo, Nomfundo")
+            // //greetings2.setDuplicate("Nomfundo")
+            // assert.equal(false, greetings2.checkForDuplicate())
      })
+     it("should return an error message if the langauge is not selected",function(){
+        var greetings =  Greetings();
+        assert.deepEqual("Please select language", greetings.checkLanguagechecked(" "))
+        
+
+        // var greetings2 =  Greetings();
+        // greetings2.setGreet("Nomzamo, Nomfundo")
+        // //greetings2.setDuplicate("Nomfundo")
+        // assert.equal(false, greetings2.checkForDuplicate())
+ })
+
+ it("should return an error message if there is no name added on the texbox for name",function(){
+    var greetings =  Greetings();
+    assert.deepEqual("Please enter the name", greetings.checkEmptyName(""))
+    
+
+    // var greetings2 =  Greetings();
+    // greetings2.setGreet("Nomzamo, Nomfundo")
+    // //greetings2.setDuplicate("Nomfundo")
+    // assert.equal(false, greetings2.checkForDuplicate())
+})
+
+   
     
 
 })
